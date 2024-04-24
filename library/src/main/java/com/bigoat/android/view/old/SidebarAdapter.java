@@ -1,4 +1,4 @@
-package com.bigoat.android.view.sidebar;
+package com.bigoat.android.view.old;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;

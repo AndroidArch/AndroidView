@@ -8,14 +8,14 @@
         android:orientation="horizontal"
         android:layout_height="match_parent">
 
-            <com.bigoat.android.view.sidebar.SidebarView
+            <com.bigoat.android.view.old.SidebarView
                 android:id="@+id/sidebarView"
                 android:background="@android:color/background_light"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 >
 
-            </com.bigoat.android.view.sidebar.SidebarView>
+            </com.bigoat.android.view.old.SidebarView>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPage"

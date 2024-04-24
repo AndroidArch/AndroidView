@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bigoat.android.view.button.ButtonView
 import com.bigoat.android.view.tabs.TabsView
+import com.google.android.material.tabs.TabLayout
 
 class TabsActivity : AppCompatActivity() {
     protected override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,8 +16,7 @@ class TabsActivity : AppCompatActivity() {
         // 设置状态栏白色
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
 
-//        val tab: TabsView = findViewById<TabsView>(R.id.tabsView)
-//        tab.addTab(tab.newTab().setText("Tab 1"))
+        val tab : TabLayout = TabLayout(this)
 //        tab.addTab(tab.newTab().setText("Tab 2"))
 //        tab.addTab(tab.newTab().setText("Tab 3"))
 //        tab.addTab(tab.newTab().setText("Tab 4"))

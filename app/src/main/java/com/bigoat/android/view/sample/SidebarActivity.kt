@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.bigoat.android.view.sample.databinding.SidebarActivityBinding
-import com.bigoat.android.view.sidebar.SidebarItem
-import com.bigoat.android.view.sidebar.SidebarView
-import com.bigoat.android.view.sidebar.SimpleAdapter
+import com.bigoat.android.view.old.SidebarItem
+import com.bigoat.android.view.old.SidebarView
+import com.bigoat.android.view.old.SimpleAdapter
 
 class SidebarActivity : AppCompatActivity() {
     protected override fun onCreate(savedInstanceState: Bundle?) {

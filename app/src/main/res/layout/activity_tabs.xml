@@ -10,9 +10,10 @@
         android:orientation="vertical">
 
 
-            <com.bigoat.android.view.sidebar.SidebarView2
+            <com.bigoat.android.view.sidebar.SidebarView
                 android:layout_width="100dp"
                 android:layout_height="match_parent">
+
 
                 <TextView
                     android:text="sdfsfs"
@@ -24,7 +25,7 @@
                     android:layout_height="50dp"/>
 
 
-            </com.bigoat.android.view.sidebar.SidebarView2>
+            </com.bigoat.android.view.sidebar.SidebarView>
 </LinearLayout>
 
 
