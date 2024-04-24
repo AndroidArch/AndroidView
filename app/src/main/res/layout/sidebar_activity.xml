@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="match_parent">
+
+            <com.bigoat.android.view.sidebar.SidebarView
+                android:id="@+id/sidebarView"
+                android:background="@android:color/background_light"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                >
+
+            </com.bigoat.android.view.sidebar.SidebarView>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPage"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:drawableTop="@drawable/image_error"
+            android:text="文本"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>
+

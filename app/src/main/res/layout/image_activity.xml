@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable name="image" type="com.bigoat.android.view.sample.ImageSrc" />
+    </data>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="Image"
+                android:gravity="center"
+                android:background="@color/white"
+                android:drawableStart="@drawable/arrow_back_24"
+                android:padding="@dimen/element_padding_xs"
+                android:textSize="24sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/element_padding_md"
+                android:columnCount="4"
+                android:orientation="horizontal"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true">
+
+                <TextView
+                    android:textSize="@dimen/element_font_size_md"
+                    android:textColor="@color/v_main_color"
+                    android:text="基础用法"
+                    android:layout_columnSpan="4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageSrc="@color/v_content_color"
+                    />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageSrc="@drawable/icon"
+                    />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageSrc="@{image.url}"
+                    />
+
+                <TextView
+                    android:textSize="@dimen/element_font_size_md"
+                    android:textColor="@color/v_content_color"
+                    android:layout_marginTop="@dimen/element_line_height_lg"
+                    android:text="填充模式"
+                    android:layout_columnSpan="4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp">
+                    <com.bigoat.android.view.image.ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="center"
+                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v_error"
+                        android:text="center"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp">
+                    <com.bigoat.android.view.image.ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v_error"
+                        android:text="centerInside"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp">
+                    <com.bigoat.android.view.image.ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v_error"
+                        android:text="centerCrop"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp">
+                    <com.bigoat.android.view.image.ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v_error"
+                        android:text="fitXY"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp">
+                    <com.bigoat.android.view.image.ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v_error"
+                        android:text="fitCenter"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp">
+                    <com.bigoat.android.view.image.ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitEnd"
+                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v_error"
+                        android:text="fitEnd"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp">
+                    <com.bigoat.android.view.image.ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitStart"
+                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v_error"
+                        android:text="fitStart"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp">
+                    <com.bigoat.android.view.image.ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="matrix"
+                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/v_error"
+                        android:text="matrix"/>
+                </FrameLayout>
+
+
+                <TextView
+                    android:textSize="@dimen/element_font_size_md"
+                    android:textColor="@color/v_error"
+                    android:layout_marginTop="@dimen/element_line_height_lg"
+                    android:text="圆形图片"
+                    android:layout_columnSpan="4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageRound="true"
+                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageCorner="30"
+                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageCornerTopLeft="30"
+                    app:imageCornerBottomRight="30"
+                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    />
+
+                <TextView
+                    android:textSize="@dimen/element_font_size_md"
+                    android:textColor="@color/v_error"
+                    android:layout_marginTop="@dimen/element_line_height_lg"
+                    android:text="加载状态"
+                    android:layout_columnSpan="4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageError="@drawable/image_error"
+                    app:imageSrc="https://fastly.jsdelivr.net1/npm/@vant/assets/cat.jpeg"
+                    />
+
+                <com.bigoat.android.view.image.ImageView
+                    android:background="@color/v_bg_color"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="100dp"
+                    app:imageHolder="@drawable/icon"
+                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    />
+            </GridLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</layout>
+
