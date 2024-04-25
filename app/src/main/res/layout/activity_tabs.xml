@@ -9,23 +9,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <com.bigoat.android.view.sidebar.SidebarItemView
+            android:background="@color/v_error"
+            android:padding="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:sidebarItemModel="bottom"
+            app:sidebarItemText="12313123"
+            app:sidebarItemTextSize="18sp"
+            app:sidebarItemIcon="@drawable/icon"
+            app:sidebarItemSelectIcon="@drawable/arrow_back_24"
+            app:sidebarItemIconWidth="100dp"
+            app:sidebarItemSpacing="30dp"
+            />
 
-            <com.bigoat.android.view.sidebar.SidebarView
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/icon"/>
 
-
-                <TextView
-                    android:text="sdfsfs"
-                    android:drawableTop="@drawable/icon"
-                    android:layout_marginTop="1dp"
-                    android:padding="20dp"
-                    android:background="@color/v_error"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"/>
-
-
-            </com.bigoat.android.view.sidebar.SidebarView>
 </LinearLayout>
 
 

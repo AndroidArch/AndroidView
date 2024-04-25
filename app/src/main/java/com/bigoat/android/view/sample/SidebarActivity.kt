@@ -21,37 +21,25 @@ class SidebarActivity : AppCompatActivity() {
             SidebarActivityBinding.inflate(getLayoutInflater(), null, false)
         setContentView(binding.getRoot())
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
-        val viewPager2: ViewPager2 = findViewById<ViewPager2>(R.id.viewPage)
+
+        val viewPager2: ViewPager2 = findViewById(R.id.viewPage)
         initSidebarView(viewPager2)
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun initSidebarView(viewPager: ViewPager2) {
-        val items: MutableList<SidebarItem> = ArrayList<SidebarItem>()
-        for (i in 0..9) {
-            val item = SidebarItem("Item " + (i + 1))
-            item.size = intArrayOf(12, 24)
-            item.color = intArrayOf(Color.parseColor("#FF0000"), Color.parseColor("#00FF00"))
-            item.topIcon = arrayOf<Drawable>(
-                resources.getDrawable(R.drawable.image_loading),
-                resources.getDrawable(R.drawable.image_error)
-            )
-            items.add(item)
-        }
-        val sidebarView: SidebarView = findViewById(R.id.sidebarView)
-        val simpleAdapter = SimpleAdapter(items)
-        sidebarView.setAdapter(simpleAdapter)
+
         viewPager.adapter = object : FragmentStateAdapter(supportFragmentManager, lifecycle) {
             override fun createFragment(position: Int): Fragment {
                 return BlankFragment.newInstance("Fragment $position")
             }
 
             override fun getItemCount(): Int {
-                return simpleAdapter.itemCount
+                return 0
             }
         }
 
-        simpleAdapter.bindViewPager(viewPager)
+//        simpleAdapter.bindViewPager(viewPager)
     }
 
     fun clickButton(view: View?) {}

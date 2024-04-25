@@ -6,20 +6,16 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.PointerIconCompat;
-import androidx.core.view.ViewCompat;
 
 import com.bigoat.android.view.R;
 import com.bigoat.android.view.utils.CopyViewUtils;
-import com.google.android.material.badge.BadgeDrawable;
-import com.google.android.material.tabs.TabLayout;
 
 public class SidebarView extends ScrollView {
 
@@ -40,22 +36,18 @@ public class SidebarView extends ScrollView {
 
     @Override
     protected void onAttachedToWindow() {
+        removeAllViews();
+
         super.onAttachedToWindow();
 
-        View view = getChildAt(0);
-        removeView(view);
 
-        LinearLayout layout = new LinearLayout(getContext());
-        layout.setOrientation(LinearLayout.VERTICAL);
-
-        for (int i = 0; i < 20; i++) {
-            TextView textView = CopyViewUtils.copyTextView(getContext(), (TextView) view);
-            textView.setText("Item " + i);
-            layout.addView(textView);
-        }
-
-        addView(layout);
     }
+
+    @Override
+    public void addView(View child, ViewGroup.LayoutParams params) {
+        addView(child, -1, params);
+    }
+
 
     private void init(Context context, AttributeSet attrs) {
 
@@ -76,64 +68,10 @@ public class SidebarView extends ScrollView {
 
 
     private void updateView() {
-        LinearLayout layout = new LinearLayout(getContext());
-        layout.setOrientation(LinearLayout.VERTICAL);
 
-        for (int i = 0; i < 20; i++) {
-            TextView textView = new TextView(getContext());
-            textView.setText("Item " + i);
-            layout.addView(textView);
-        }
 
-        addView(layout);
+
     }
 
-    public final class TabView extends LinearLayout {
-        private TabLayout.Tab tab;
-        private TextView textView;
-        private ImageView iconView;
-        @Nullable
-        private View badgeAnchorView;
-        @Nullable
-        private BadgeDrawable badgeDrawable;
-        @Nullable
-        private View customView;
-        @Nullable
-        private TextView customTextView;
-        @Nullable
-        private ImageView customIconView;
-        @Nullable
-        private Drawable baseBackgroundDrawable;
-        private int defaultMaxLines = 2;
-
-        public TabView(@NonNull Context context) {
-            super(context);
-            this.setGravity(17);
-            this.setClickable(true);
-            ViewCompat.setPointerIcon(this, PointerIconCompat.getSystemIcon(this.getContext(), 1002));
-        }
-    }
-    public static class Tab {
-        public static final int INVALID_POSITION = -1;
-        @Nullable
-        private Object tag;
-        @Nullable
-        private Drawable icon;
-        @Nullable
-        private CharSequence text;
-        @Nullable
-        private CharSequence contentDesc;
-        private int position = -1;
-        @Nullable
-        private View customView;
-        @Nullable
-        public TabLayout parent;
-        @NonNull
-        public TabLayout.TabView view;
-        private int id = -1;
-
-        public Tab() {
-        }
-    }
 
 }

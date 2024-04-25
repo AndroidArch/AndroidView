@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".BadgeActivity">
+
+    <TextView
+        android:text="直角边形状"
+        android:textColor="@color/v_content_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.bigoat.android.view.badge.BadgeView
+        android:text="9999"
+        app:badgeShape="horn"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="徽章数显示方式"
+        android:textColor="@color/v_content_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="显示圆点"
+        android:textColor="@color/v_content_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.bigoat.android.view.badge.BadgeView
+        android:text="222324"
+        app:badgeIsDot="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:text="自定义主题"
+        android:textColor="@color/v_content_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.bigoat.android.view.badge.BadgeView
+            android:text="9"
+            app:badgeType="primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <com.bigoat.android.view.badge.BadgeView
+            android:text="9"
+            app:badgeType="warning"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <com.bigoat.android.view.badge.BadgeView
+            android:text="9"
+            app:badgeType="success"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <com.bigoat.android.view.badge.BadgeView
+            android:text="9"
+            android:layout_marginStart="20dp"
+            app:badgeType="info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="反转色"
+        android:textColor="@color/v_content_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.bigoat.android.view.badge.BadgeView
+        android:text="11"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.bigoat.android.view.badge.BadgeView
+        android:text="133"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

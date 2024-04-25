@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        startActivity(Intent(this, TabsActivity::class.java))
+        startActivity(Intent(this, BadgeActivity::class.java))
     }
 
     fun jumpToButtonActivity(view: View?) {
