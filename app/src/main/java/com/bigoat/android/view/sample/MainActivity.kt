@@ -19,4 +19,8 @@ class MainActivity : AppCompatActivity() {
     fun jumpToImageActivity(view: View?) {
         startActivity(Intent(this, ImageActivity::class.java))
     }
+
+    fun jumpToBadgeActivity(view: View) {
+        startActivity(Intent(this, BadgeActivity::class.java))
+    }
 }
