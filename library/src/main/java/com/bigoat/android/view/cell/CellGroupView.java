@@ -224,20 +224,20 @@ public class CellGroupView extends CardView {
 
         switch (size) {
             case 0:
-                textView.setHeight(getResources().getDimensionPixelSize(R.dimen.element_button_size_mini));
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.element_font_size_xs));
+                textView.setHeight(getResources().getDimensionPixelSize(R.dimen.v_button_size_xs));
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.v_font_size_xs));
                 break;
             case 1:
-                textView.setHeight(getResources().getDimensionPixelSize(R.dimen.element_button_size_small));
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.element_font_size_sm));
+                textView.setHeight(getResources().getDimensionPixelSize(R.dimen.v_button_size_sm));
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.v_font_size_sm));
                 break;
             case 3:
-                textView.setHeight(getResources().getDimensionPixelSize(R.dimen.element_button_size_large));
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.element_font_size_lg));
+                textView.setHeight(getResources().getDimensionPixelSize(R.dimen.v_button_size_lg));
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.v_font_size_lg));
                 break;
             default:
-                textView.setHeight(getResources().getDimensionPixelSize(R.dimen.element_button_size_normal));
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.element_font_size_md));
+                textView.setHeight(getResources().getDimensionPixelSize(R.dimen.v_button_size_md));
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.v_font_size_md));
                 break;
         }
     }

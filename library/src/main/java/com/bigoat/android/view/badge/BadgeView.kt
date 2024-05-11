@@ -10,6 +10,9 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import com.bigoat.android.view.R
 
+/**
+ * 徽章控件
+ */
 class BadgeView : AppCompatTextView {
     private var isDot = false
     private var value: String? = null

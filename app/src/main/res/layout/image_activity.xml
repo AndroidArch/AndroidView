@@ -21,7 +21,7 @@
                 android:gravity="center"
                 android:background="@color/white"
                 android:drawableStart="@drawable/arrow_back_24"
-                android:padding="@dimen/element_padding_xs"
+                android:padding="@dimen/v_padding_xs"
                 android:textSize="24sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -29,14 +29,14 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/element_padding_md"
+                android:padding="@dimen/v_padding_md"
                 android:columnCount="4"
                 android:orientation="horizontal"
                 android:alignmentMode="alignMargins"
                 android:useDefaultMargins="true">
 
                 <TextView
-                    android:textSize="@dimen/element_font_size_md"
+                    android:textSize="@dimen/v_font_size_md"
                     android:textColor="@color/v_main_color"
                     android:text="基础用法"
                     android:layout_columnSpan="4"
@@ -64,7 +64,7 @@
                     android:layout_width="0dp"
                     android:layout_columnWeight="1"
                     android:layout_height="100dp"
-                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    app:imageSrc="https://picsum.photos/200/200"
                     />
 
                 <com.bigoat.android.view.image.ImageView
@@ -76,9 +76,9 @@
                     />
 
                 <TextView
-                    android:textSize="@dimen/element_font_size_md"
+                    android:textSize="@dimen/v_font_size_md"
                     android:textColor="@color/v_content_color"
-                    android:layout_marginTop="@dimen/element_line_height_lg"
+                    android:layout_marginTop="@dimen/v_line_height_lg"
                     android:text="填充模式"
                     android:layout_columnSpan="4"
                     android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="center"
-                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        app:imageSrc="https://picsum.photos/200/200"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -112,7 +112,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerInside"
-                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        app:imageSrc="https://picsum.photos/200/200"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -131,7 +131,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        app:imageSrc="https://picsum.photos/200/200"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -150,7 +150,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
-                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        app:imageSrc="https://picsum.photos/200/200"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -169,7 +169,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitCenter"
-                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        app:imageSrc="https://picsum.photos/200/200"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -188,7 +188,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitEnd"
-                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        app:imageSrc="https://picsum.photos/200/200"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -207,7 +207,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitStart"
-                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        app:imageSrc="https://picsum.photos/200/200"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -226,7 +226,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="matrix"
-                        app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                        app:imageSrc="https://picsum.photos/200/200"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -238,9 +238,9 @@
 
 
                 <TextView
-                    android:textSize="@dimen/element_font_size_md"
+                    android:textSize="@dimen/v_font_size_md"
                     android:textColor="@color/v_error"
-                    android:layout_marginTop="@dimen/element_line_height_lg"
+                    android:layout_marginTop="@dimen/v_line_height_lg"
                     android:text="圆形图片"
                     android:layout_columnSpan="4"
                     android:layout_width="match_parent"
@@ -252,7 +252,7 @@
                     android:layout_columnWeight="1"
                     android:layout_height="100dp"
                     app:imageRound="true"
-                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    app:imageSrc="https://picsum.photos/200/200"
                     />
 
                 <com.bigoat.android.view.image.ImageView
@@ -261,7 +261,7 @@
                     android:layout_columnWeight="1"
                     android:layout_height="100dp"
                     app:imageCorner="30"
-                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    app:imageSrc="https://picsum.photos/200/200"
                     />
 
                 <com.bigoat.android.view.image.ImageView
@@ -271,13 +271,13 @@
                     android:layout_height="100dp"
                     app:imageCornerTopLeft="30"
                     app:imageCornerBottomRight="30"
-                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    app:imageSrc="https://picsum.photos/200/200"
                     />
 
                 <TextView
-                    android:textSize="@dimen/element_font_size_md"
+                    android:textSize="@dimen/v_font_size_md"
                     android:textColor="@color/v_error"
-                    android:layout_marginTop="@dimen/element_line_height_lg"
+                    android:layout_marginTop="@dimen/v_line_height_lg"
                     android:text="加载状态"
                     android:layout_columnSpan="4"
                     android:layout_width="match_parent"
@@ -297,7 +297,7 @@
                     android:layout_columnWeight="1"
                     android:layout_height="100dp"
                     app:imageHolder="@drawable/icon"
-                    app:imageSrc="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+                    app:imageSrc="https://picsum.photos/200/200"
                     />
             </GridLayout>
 

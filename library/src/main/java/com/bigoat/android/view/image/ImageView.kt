@@ -19,6 +19,9 @@ import com.bumptech.glide.request.RequestOptions
 import java.io.File
 import java.net.URL
 
+/**
+ * 图片控件
+ */
 class ImageView : AppCompatImageView {
     private var imageSrc: String? = null
     private var imageHolder: Drawable? = null

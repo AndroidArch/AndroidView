@@ -1,4 +1,4 @@
-package com.bigoat.android.view.background;
+package com.bigoat.android.view.binding;
 
 
 import static com.bigoat.android.view.utils.ViewUtils.dp2px;

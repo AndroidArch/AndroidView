@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AndroidView"
         tools:targetApi="31">
         <activity
+            android:name=".ColorActivity"
+            android:exported="false" />
+        <activity
             android:name=".BadgeActivity"
             android:exported="false" />
         <activity
@@ -28,8 +31,6 @@
         </activity>
         <activity android:name=".ButtonActivity" />
         <activity android:name=".ImageActivity" />
-        <activity android:name=".SidebarActivity" />
-        <activity android:name=".TabsActivity" />
     </application>
 
 </manifest>

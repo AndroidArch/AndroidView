@@ -16,6 +16,10 @@ import com.bigoat.android.view.R
 import com.bigoat.android.view.utils.ViewUtils
 import com.bigoat.android.view.utils.ViewUtils.darkenColor
 
+/**
+ * 按钮控件
+
+ */
 class ButtonView : CardView {
     // 插槽
     enum class Slots {
@@ -229,37 +233,37 @@ class ButtonView : CardView {
         when (size) {
             0 -> {
                 textView!!.height =
-                    resources.getDimensionPixelSize(R.dimen.element_button_size_mini)
+                    resources.getDimensionPixelSize(R.dimen.v_button_size_xs)
                 textView!!.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
-                    resources.getDimensionPixelSize(R.dimen.element_font_size_xs).toFloat()
+                    resources.getDimensionPixelSize(R.dimen.v_font_size_xs).toFloat()
                 )
             }
 
             1 -> {
                 textView!!.height =
-                    resources.getDimensionPixelSize(R.dimen.element_button_size_small)
+                    resources.getDimensionPixelSize(R.dimen.v_button_size_sm)
                 textView!!.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
-                    resources.getDimensionPixelSize(R.dimen.element_font_size_sm).toFloat()
+                    resources.getDimensionPixelSize(R.dimen.v_font_size_sm).toFloat()
                 )
             }
 
             3 -> {
                 textView!!.height =
-                    resources.getDimensionPixelSize(R.dimen.element_button_size_large)
+                    resources.getDimensionPixelSize(R.dimen.v_button_size_lg)
                 textView!!.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
-                    resources.getDimensionPixelSize(R.dimen.element_font_size_lg).toFloat()
+                    resources.getDimensionPixelSize(R.dimen.v_font_size_lg).toFloat()
                 )
             }
 
             else -> {
                 textView!!.height =
-                    resources.getDimensionPixelSize(R.dimen.element_button_size_normal)
+                    resources.getDimensionPixelSize(R.dimen.v_button_size_md)
                 textView!!.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
-                    resources.getDimensionPixelSize(R.dimen.element_font_size_md).toFloat()
+                    resources.getDimensionPixelSize(R.dimen.v_font_size_md).toFloat()
                 )
             }
         }
