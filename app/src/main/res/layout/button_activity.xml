@@ -17,7 +17,7 @@
             android:gravity="center"
             android:background="@color/white"
             android:drawableStart="@drawable/arrow_back_24"
-            android:padding="@dimen/element_padding_xs"
+            android:padding="@dimen/v_padding_xs"
             android:textSize="24sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -25,15 +25,15 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/element_padding_md"
+            android:padding="@dimen/v_padding_md"
             android:columnCount="4"
             android:orientation="horizontal"
             android:alignmentMode="alignMargins"
             android:useDefaultMargins="true">
 
             <TextView
-                android:textSize="@dimen/element_font_size_md"
-                android:layout_marginBottom="@dimen/element_line_height_lg"
+                android:textSize="@dimen/v_font_size_md"
+                android:layout_marginBottom="@dimen/v_line_height_lg"
                 android:text="按钮类型"
                 android:layout_columnSpan="4"
                 android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                 />
 
             <TextView
-                android:textSize="@dimen/element_font_size_md"
+                android:textSize="@dimen/v_font_size_md"
                 android:layout_marginBottom="8dp"
                 android:text="朴素按钮"
                 android:layout_columnSpan="4"
@@ -125,7 +125,7 @@
 
 
             <TextView
-                android:textSize="@dimen/element_font_size_md"
+                android:textSize="@dimen/v_font_size_md"
                 android:layout_marginBottom="8dp"
                 android:text="按钮尺寸"
                 android:layout_columnSpan="4"
@@ -171,7 +171,7 @@
 
 
             <TextView
-                android:textSize="@dimen/element_font_size_md"
+                android:textSize="@dimen/v_font_size_md"
                 android:layout_marginBottom="8dp"
                 android:text="按钮形状"
                 android:layout_columnSpan="4"
@@ -207,7 +207,7 @@
 
 
             <TextView
-                android:textSize="@dimen/element_font_size_md"
+                android:textSize="@dimen/v_font_size_md"
                 android:layout_marginBottom="8dp"
                 android:text="自定义颜色"
                 android:layout_columnSpan="4"
@@ -250,7 +250,7 @@
                 />
 
             <TextView
-                android:textSize="@dimen/element_font_size_md"
+                android:textSize="@dimen/v_font_size_md"
                 android:layout_marginBottom="8dp"
                 android:text="禁用状态"
                 android:layout_columnSpan="4"
@@ -277,7 +277,7 @@
                 />
 
             <TextView
-                android:textSize="@dimen/element_font_size_md"
+                android:textSize="@dimen/v_font_size_md"
                 android:layout_marginBottom="8dp"
                 android:text="插槽使用"
                 android:layout_columnSpan="4"

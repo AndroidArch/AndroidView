@@ -18,6 +18,9 @@
             android:name=".BackgroundActivity"
             android:exported="false" />
         <activity
+            android:name=".ColorActivity"
+            android:exported="false" />
+        <activity
             android:name=".BadgeActivity"
             android:exported="false" />
         <activity

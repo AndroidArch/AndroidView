@@ -49,9 +49,17 @@
             android:textSize="14sp" />
 
         <Button
-            android:text="Button 按钮"
+            android:text="Color 颜色"
             android:gravity="start"
-            android:onClick="jumpToButtonActivity"
+            android:onClick="jumpToColorActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Icon 图标"
+            android:gravity="start"
+            android:enabled="false"
+            android:onClick="clickJump"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -59,6 +67,37 @@
             android:text="Image 图片"
             android:gravity="start"
             android:onClick="jumpToImageActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Button 按钮"
+            android:gravity="start"
+            android:onClick="jumpToButtonActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Text 文本"
+            android:gravity="start"
+            android:enabled="false"
+            android:onClick="clickJump"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Layout 布局"
+            android:gravity="start"
+            android:enabled="false"
+            android:onClick="clickJump"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Cell 单元格"
+            android:gravity="start"
+            android:enabled="false"
+            android:onClick="clickJump"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

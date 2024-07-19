@@ -115,8 +115,6 @@
         <attr name="cellValueColor" format="color|reference" />
     </declare-styleable>
 
-
-
     <declare-styleable name="BackgroundView">
         <attr name="backgroundColor" format="color" />
         <attr name="backgroundRound" format="boolean" />
@@ -126,59 +124,5 @@
         <attr name="backgroundCornerBottomRight" format="integer" />
         <attr name="backgroundCornerBottomLeft" format="integer" />
     </declare-styleable>
-
-    <declare-styleable name="SidebarView">
-        <attr name="sidebarData" format="reference" />
-        <attr name="sidebarSelectColor" format="color" />
-    </declare-styleable>
-
-    <declare-styleable name="SidebarItemView">
-        <attr name="sidebarItemSpacing" format="dimension"/>
-        <attr name="sidebarItemModel" format="enum">
-            <enum name="left" value="0"/>
-            <enum name="top" value="1"/>
-            <enum name="right" value="2"/>
-            <enum name="bottom" value="3"/>
-        </attr>
-        <attr name="sidebarItemIcon" format="reference"/>
-        <attr name="sidebarItemSelectIcon" format="reference"/>
-        <attr name="sidebarItemIconWidth" format="dimension"/>
-        <attr name="sidebarItemIconHeight" format="dimension"/>
-        <attr name="sidebarItemText" format="reference|string"/>
-        <attr name="sidebarItemTextSize" format="dimension"/>
-        <attr name="sidebarItemTextColor" format="color"/>
-        <attr name="sidebarItemTextSelectColor" format="color"/>
-    </declare-styleable>
-
-
-    <!--    -->
-    <declare-styleable name="NavBarView">
-        <attr name="backText" format="string|reference" />
-        <attr name="backColor" format="color|reference" />
-        <attr name="backSize" format="dimension|reference" />
-        <attr name="titleText" format="string|reference" />
-        <attr name="titleColor" format="color|reference" />
-        <attr name="titleSize" format="dimension|reference" />
-        <attr name="actionText" format="string|reference" />
-        <attr name="actionColor" format="color|reference" />
-        <attr name="actionSize" format="dimension|reference" />
-    </declare-styleable>
-
-    <declare-styleable name="SelectView">
-        <attr name="placeholder" format="string|reference" />
-        <attr name="placeholderColor" format="color|reference" />
-        <attr name="fontSize" format="dimension|reference" />
-        <attr name="arrow" format="reference" />
-    </declare-styleable>
-
-    <declare-styleable name="SearchView">
-        <attr name="searchFontColor" format="color|reference" />
-        <attr name="searchFontSize" format="dimension|reference" />
-        <attr name="searchPlaceholder" format="string|reference" />
-        <attr name="searchPlaceholderColor" format="color|reference" />
-        <attr name="searchIconShow" format="boolean" />
-    </declare-styleable>
-
-
 
 </resources>
