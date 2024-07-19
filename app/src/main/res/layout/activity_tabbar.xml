@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".BadgeActivity">
+
+    <TextView
+        android:text="基础用法"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/v_content_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.bigoat.android.view.tabbar.TabbarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bigoat.android.view.tabbar.TabbarItemView
+            android:text="微信"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </com.bigoat.android.view.tabbar.TabbarView>
+
+
+
+</LinearLayout>

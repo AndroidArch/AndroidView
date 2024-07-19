@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        startActivity(Intent(this, BadgeActivity::class.java))
+        startActivity(Intent(this, BackgroundActivity::class.java))
     }
 
     fun jumpToButtonActivity(view: View?) {
@@ -22,5 +22,13 @@ class MainActivity : AppCompatActivity() {
 
     fun jumpToBadgeActivity(view: View) {
         startActivity(Intent(this, BadgeActivity::class.java))
+    }
+
+    fun jumpToBackgroundActivity(view: View) {
+        startActivity(Intent(this, BackgroundActivity::class.java))
+    }
+
+    fun jumpToTabbarActivity(view: View) {
+        startActivity(Intent(this, TabbarActivity::class.java))
     }
 }

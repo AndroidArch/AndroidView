@@ -63,9 +63,23 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:text="Badge 徽标数 "
+            android:text="Badge 徽标数"
             android:gravity="start"
             android:onClick="jumpToBadgeActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Tabbar 标签栏"
+            android:gravity="start"
+            android:onClick="jumpToTabbarActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Background 背景"
+            android:gravity="start"
+            android:onClick="jumpToBackgroundActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

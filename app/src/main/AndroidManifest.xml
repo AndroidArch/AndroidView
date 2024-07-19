@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AndroidView"
         tools:targetApi="31">
         <activity
+            android:name=".BackgroundActivity"
+            android:exported="false" />
+        <activity
             android:name=".BadgeActivity"
             android:exported="false" />
         <activity
@@ -30,6 +33,7 @@
         <activity android:name=".ImageActivity" />
         <activity android:name=".SidebarActivity" />
         <activity android:name=".TabsActivity" />
+        <activity android:name="com.bigoat.android.view.sample.TabbarActivity" />
     </application>
 
 </manifest>

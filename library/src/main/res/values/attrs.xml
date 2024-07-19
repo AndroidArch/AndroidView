@@ -62,6 +62,18 @@
         <attr name="badgeInverted" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="TabbarView">
+
+    </declare-styleable>
+
+    <declare-styleable name="TabbarItemView">
+        <attr name="tabbarItemIconActive" format="reference" />
+        <attr name="tabbarItemIconInactive" format="reference" />
+        <attr name="tabbarItemIconWidth" format="dimension" />
+        <attr name="tabbarItemIconHeight" format="dimension" />
+    </declare-styleable>
+
+
 
 
 <!--  TODO  -->

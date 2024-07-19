@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -46,6 +47,7 @@ public class BackgroundView extends CardView {
     }
 
     private void init(Context context, AttributeSet attrs) {
+        setElevation(0);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.BackgroundView);
         try {
             initAttrs(typedArray);
@@ -55,7 +57,6 @@ public class BackgroundView extends CardView {
     }
 
     private void initAttrs(TypedArray typedArray) {
-
         color = typedArray.getColor(R.styleable.BackgroundView_backgroundColor, Color.TRANSPARENT);
         round = typedArray.getBoolean(R.styleable.BackgroundView_backgroundRound, false);
         corner = typedArray.getInt(R.styleable.BackgroundView_backgroundCorner, -1);
@@ -64,20 +65,20 @@ public class BackgroundView extends CardView {
         cornerBottomRight = typedArray.getInt(R.styleable.BackgroundView_backgroundCornerBottomRight, -1);
         cornerBottomLeft = typedArray.getInt(R.styleable.BackgroundView_backgroundCornerBottomLeft, -1);
 
-        load(this, color, round, corner, cornerTopLeft, cornerTopRight, cornerBottomRight, cornerBottomLeft);
+//        load(this, color, round, corner, cornerTopLeft, cornerTopRight, cornerBottomRight, cornerBottomLeft);
     }
 
     @SuppressLint("CheckResult")
     @BindingAdapter(value = {
             "backgroundColor", // 源图片
-            "backgroundRound", // 圆形图片
+            "background2Round", // 圆形图片
             "backgroundCorner", // 圆角大小
             "backgroundCornerTopLeft", // 圆角左上角大小
             "backgroundCornerTopRight", // 圆角右上角大小
             "backgroundCornerBottomRight", // 圆角左下角大小
             "backgroundCornerBottomLeft" // 圆角右下角大小
     }, requireAll = false)
-    public static void load(@NotNull View view,
+    public static void load(@NotNull TextView view,
                             int color,
                             boolean round,
                             int corner,
@@ -105,11 +106,11 @@ public class BackgroundView extends CardView {
         view.setBackground(drawable);
     }
 
-    public static void load(@NotNull View view, String color, boolean round) {
+    public static void load(@NotNull TextView view, String color, boolean round) {
         load(view, Color.parseColor(color), round, 0, 0, 0, 0, 0);
     }
 
-    public static void load(@NotNull View view, String color, int corner) {
+    public static void load(@NotNull TextView view, String color, int corner) {
         load(view, Color.parseColor(color), false, corner, 0, 0, 0, 0);
     }
 }
