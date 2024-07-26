@@ -37,6 +37,7 @@
         <activity android:name=".SidebarActivity" />
         <activity android:name=".TabsActivity" />
         <activity android:name="com.bigoat.android.view.sample.TabbarActivity" />
+        <activity android:name="com.bigoat.android.view.sample.IconActivity" />
     </application>
 
 </manifest>

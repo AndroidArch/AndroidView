@@ -4,7 +4,6 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import com.bigoat.android.view.background.BackgroundView
 
 class BackgroundActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

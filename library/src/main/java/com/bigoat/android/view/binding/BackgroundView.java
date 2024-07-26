@@ -9,20 +9,18 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
-import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.BindingAdapter;
-
 
 import com.bigoat.android.view.R;
 
 import org.jetbrains.annotations.NotNull;
 
 
-public class BackgroundView extends CardView {
+public class BackgroundView extends FrameLayout {
     private int color;
     private boolean round;
     private int corner;

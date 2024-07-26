@@ -10,8 +10,8 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.MotionEvent
+import android.widget.FrameLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import com.bigoat.android.view.R
 import com.bigoat.android.view.utils.ViewUtils
 import com.bigoat.android.view.utils.ViewUtils.darkenColor
@@ -20,7 +20,7 @@ import com.bigoat.android.view.utils.ViewUtils.darkenColor
  * 按钮控件
 
  */
-class ButtonView : CardView {
+class ButtonView : FrameLayout {
     // 插槽
     enum class Slots {
         DEF,

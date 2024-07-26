@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.bigoat.android.view.navbar.NavBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:drawableStart="@drawable/arrow_back_24"
+            android:gravity="center"
+            android:padding="@dimen/v_padding_xs"
+            app:titleText="图标"
+            android:textSize="24sp" />
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            app:queryHint="Search..."
+            app:iconifiedByDefault="false"
+            app:closeIcon="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3"
+            android:padding="@dimen/v_padding_md"
+            android:useDefaultMargins="true">
+
+        </GridLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
+

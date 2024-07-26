@@ -3,19 +3,9 @@ package com.bigoat.android.view.tabbar
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
-import android.graphics.Color
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
-import android.util.TypedValue
-import android.view.Gravity
-import android.view.MotionEvent
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import com.bigoat.android.view.R
-import com.bigoat.android.view.utils.ViewUtils
-import com.bigoat.android.view.utils.ViewUtils.darkenColor
 
 class TabbarView : LinearLayout {
     constructor(context: Context) : super(context) {

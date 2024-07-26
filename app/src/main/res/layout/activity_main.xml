@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/element_padding_md"
+        android:padding="@dimen/v_padding_md"
         tools:context=".MainActivity">
 
         <LinearLayout
@@ -56,10 +56,11 @@
             android:layout_height="wrap_content" />
 
         <Button
+            android:id="@+id/icon"
             android:text="Icon 图标"
             android:gravity="start"
-            android:enabled="false"
-            android:onClick="clickJump"
+            android:enabled="true"
+            android:onClick="openActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

@@ -16,15 +16,15 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 
 import com.bigoat.android.view.R;
 
 
-public class CellGroupView extends CardView {
+public class CellGroupView extends FrameLayout {
     private static final float DARKENING_RATIO = 0.8f;
     private static final int ROUNDED_CORNERS = 4;
 

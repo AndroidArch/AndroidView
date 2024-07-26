@@ -66,14 +66,16 @@
 
     </declare-styleable>
 
+    <declare-styleable name="IconView">
+        <attr name="name" format="reference" />
+    </declare-styleable>
+
     <declare-styleable name="TabbarItemView">
         <attr name="tabbarItemIconActive" format="reference" />
         <attr name="tabbarItemIconInactive" format="reference" />
         <attr name="tabbarItemIconWidth" format="dimension" />
         <attr name="tabbarItemIconHeight" format="dimension" />
     </declare-styleable>
-
-
 
 
 <!--  TODO  -->

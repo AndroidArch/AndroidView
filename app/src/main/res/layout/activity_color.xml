@@ -11,15 +11,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <com.bigoat.android.view.navbar.NavBarView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:drawableStart="@drawable/arrow_back_24"
-            android:gravity="center"
-            android:padding="@dimen/v_padding_xs"
-            android:text="色彩"
-            android:textSize="24sp" />
+            android:padding="@dimen/v_padding"
+            app:titleText="颜色"
+            />
+
+        <com.bigoat.android.view.icon.IconView
+            android:text="@string/faw_angle_left"
+            android:textSize="32sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <GridLayout
             android:layout_width="match_parent"
