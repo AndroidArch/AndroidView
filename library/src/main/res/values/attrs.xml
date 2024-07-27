@@ -67,7 +67,7 @@
     </declare-styleable>
 
     <declare-styleable name="IconView">
-        <attr name="name" format="reference" />
+        <attr name="name" format="reference|string" />
     </declare-styleable>
 
     <declare-styleable name="TabbarItemView">

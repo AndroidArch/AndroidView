@@ -19,7 +19,7 @@
             />
 
         <com.bigoat.android.view.icon.IconView
-            android:text="@string/faw_angle_left"
+            android:text="@string/icon_chevron_backward"
             android:textSize="32sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

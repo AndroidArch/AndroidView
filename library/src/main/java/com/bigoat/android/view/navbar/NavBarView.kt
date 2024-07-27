@@ -19,9 +19,9 @@ import com.bigoat.android.view.icon.IconView
 class NavBarView : FrameLayout {
     private var value: String? = null
 
-    private lateinit var leftView: IconView
-    private lateinit var titleView: TextView
-    private lateinit var rightView: TextView
+    lateinit var leftView: IconView
+    lateinit var titleView: TextView
+    lateinit var rightView: TextView
 
     private var leftListener: OnClickListener = OnClickListener { finishActivity() }
     private var rightListener: OnClickListener = OnClickListener { }
@@ -42,8 +42,9 @@ class NavBarView : FrameLayout {
 
     private fun init(context: Context, attrs: AttributeSet?) {
         leftView = IconView(context).apply {
-            text = resources.getString(R.string.faw_angle_left) + " 返回"
+            setName(R.string.icon_chevron_backward)
             gravity = Gravity.CENTER
+            textSize = resources.getDimension(R.dimen.v_font_size_md)
             setTextColor(ContextCompat.getColor(context, R.color.v_primary))
             setOnClickListener(leftListener)
         }

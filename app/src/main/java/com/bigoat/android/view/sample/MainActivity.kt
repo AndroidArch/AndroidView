@@ -5,11 +5,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.FileUtils
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.bigoat.android.view.icon.IconView
+import com.blankj.utilcode.constant.PermissionConstants
+import com.blankj.utilcode.util.FileIOUtils
+import com.blankj.utilcode.util.PathUtils
+import com.blankj.utilcode.util.PermissionUtils
 import org.apache.fontbox.ttf.CmapSubtable
 import org.apache.fontbox.ttf.CmapTable
 import org.apache.fontbox.ttf.PostScriptTable
@@ -23,6 +29,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        parseTTF(this, "gmd_outlined_light.ttf")
+
+        val view:IconView = IconView(this)
+        view.name
     }
 
 
@@ -69,31 +80,37 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(api = Build.VERSION_CODES.N)
     fun parseTTF(context: Context, fileName: String?): Map<String, String> {
         val iconMap: Map<String, String> = HashMap()
-
         try {
+            PermissionUtils.permission(PermissionConstants.STORAGE).request()
+            com.blankj.utilcode.util.FileUtils.delete((cacheDir.path+"/icon.xml"))
             val inputStream = context.assets.open(fileName!!)
             val parser = TTFParser()
             val ttf: TrueTypeFont = parser.parse(inputStream)
 
             val tables: Collection<TTFTable> = ttf.getTables()
+
             for (table in tables) {
                 if (table.getTag().equals("post")) {
                     val scriptTable: PostScriptTable = table as PostScriptTable
                     val names: Array<String> = scriptTable.getGlyphNames()
                     for (name in names) {
-                        Log.d("Font", "name: $name")
+                        val content = "<string name=\"$name\">$name</string>"
+                        val contentFill = "<string name=\"$name.fill\">$name.fill</string>"
+                        Log.d("Font", content)
+                        FileIOUtils.writeFileFromString(cacheDir.path+"/icon.xml", content + "\r\n", true)
+                        FileIOUtils.writeFileFromString(cacheDir.path+"/icon.xml", contentFill + "\r\n", true)
                     }
                 }
 
-                if (table.getTag().equals("cmap")) {
-                    val cmapTable: CmapTable = table as CmapTable
-                    val cmapSubtable: CmapSubtable = cmapTable.getCmaps().get(0)
-                    val codes: List<Int> = cmapSubtable.getCharCodes(262)
-                    codes.forEach(Consumer { code: Int? ->
-                        val unicode = String.format("\\u%04x", code)
-                        Log.d("Font", "code: $unicode")
-                    })
-                }
+//                if (table.getTag().equals("cmap")) {
+//                    val cmapTable: CmapTable = table as CmapTable
+//                    val cmapSubtable: CmapSubtable = cmapTable.getCmaps().get(0)
+//                    val codes: List<Int> = cmapSubtable.getCharCodes(262)
+//                    codes.forEach(Consumer { code: Int? ->
+//                        val unicode = String.format("\\u%04x", code)
+//                        Log.d("Font", "code: $unicode")
+//                    })
+//                }
             }
 
 

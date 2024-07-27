@@ -65,5 +65,5 @@ dependencies {
     // 图片加载
     implementation("com.github.bumptech.glide:glide:4.12.0")
 
-    implementation("org.apache.pdfbox:fontbox:2.0.24")
+    api("org.apache.pdfbox:fontbox:2.0.24")
 }

@@ -7,18 +7,15 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import com.bigoat.android.view.R
-import java.lang.reflect.Field
 
 /**
  * 徽章控件
  */
 class IconView : AppCompatTextView {
-    var name: Int = -1
+    var name: String = ""
         set(value) {
-            if (value != -1) {
-                field = value
-                setText(value)
-            }
+            field = value
+            updateView()
         }
 
     constructor(context: Context) : super(context) {
@@ -38,7 +35,6 @@ class IconView : AppCompatTextView {
     }
 
     private fun init(context: Context, attrs: AttributeSet?) {
-        typeface = TYPE_FACE
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.IconView)
         try {
             initAttrs(typedArray)
@@ -48,26 +44,39 @@ class IconView : AppCompatTextView {
     }
 
     private fun initAttrs(typedArray: TypedArray) {
-        name = typedArray.getInt(R.styleable.IconView_name, -1)
-        if (name != -1) setText(name)
+        var nameStr = typedArray.getString(R.styleable.IconView_name)
+        if (nameStr == null) {
+            val nameInt = typedArray.getInt(R.styleable.IconView_name, -1)
+            if (nameInt != -1) {
+                nameStr = resources.getString(nameInt)
+            }
+        }
 
-        updateView()
+        nameStr?.let {
+            name = it
+            updateView()
+        }
     }
 
     private fun updateView() {
-
+        typeface =
+            if (name.endsWith(".fill", true)) TypefaceCache.typeFaceFill else TypefaceCache.typeFace
+        text = name.removeSuffix(".fill")
     }
 
+    fun setName(name: Int) {
+        this.name = resources.getString(name)
+    }
+}
 
-    companion object {
-        val TYPE_FACE: Typeface
-            get() = runCatching {
-                IconInitializer.context?.let {
-                    ResourcesCompat.getFont(
-                        it,
-                        R.font.faw_solid_5_13_3
-                    )
-                }
-            }.getOrNull() ?: Typeface.DEFAULT
+object TypefaceCache {
+    val typeFace: Typeface by lazy {
+        ResourcesCompat.getFont(IconInitializer.context!!, R.font.gmd_outlined_light)
+            ?: Typeface.DEFAULT
+    }
+
+    val typeFaceFill: Typeface by lazy {
+        ResourcesCompat.getFont(IconInitializer.context!!, R.font.gmd_outlined_light_filled)
+            ?: Typeface.DEFAULT
     }
 }

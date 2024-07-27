@@ -7,12 +7,14 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.GridLayout
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import com.bigoat.android.view.icon.FontAwesome
 import com.bigoat.android.view.icon.IconView
+import com.bigoat.android.view.navbar.NavBarView
 import com.blankj.utilcode.util.ThreadUtils
 import java.lang.reflect.Field
 import java.util.concurrent.TimeUnit
@@ -25,6 +27,8 @@ class IconActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_icon)
+        val nav:NavBarView = findViewById(R.id.nav)
+
         val gridLayout = findViewById<GridLayout>(R.id.gridLayout)
 
         val searchView = findViewById<SearchView>(R.id.search)
@@ -52,9 +56,9 @@ class IconActivity : AppCompatActivity() {
                 getAllIconResources(com.bigoat.android.view.R.string::class.java).forEach { (key, value) ->
                     val childView = layoutInflater.inflate(R.layout.icon_item, null)
                     val iconView: IconView = childView.findViewById(R.id.icon)
-                    iconView.name = value
+                    iconView.setName(value)
 
-                    val name = key.replace("faw_", "")
+                    val name = key.replace("icon_", "")
                     val nameView: TextView = childView.findViewById(R.id.name)
                     nameView.text = name
 
@@ -68,8 +72,14 @@ class IconActivity : AppCompatActivity() {
                     childView.tag = name
                     iconViewList.add(childView)
                 }
+                nav.rightView.apply {
+                    visibility = View.VISIBLE
+                    text = iconViewList.size.toString()
+                }
+
+                findViewById<ProgressBar>(R.id.progress).visibility = View.GONE
             }
-        }, 1000)
+        }, 100)
 
     }
 

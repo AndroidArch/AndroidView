@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/v_bg_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <com.bigoat.android.view.navbar.NavBarView
+        android:id="@+id/nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="@color/white"
+        android:drawableStart="@drawable/arrow_back_24"
+        android:gravity="center"
+        android:padding="@dimen/v_padding_xs"
+        app:titleText="图标"
+        android:textSize="24sp" />
 
-        <com.bigoat.android.view.navbar.NavBarView
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        app:queryHint="Search..."
+        app:iconifiedByDefault="false"
+        app:closeIcon="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:drawableStart="@drawable/arrow_back_24"
-            android:gravity="center"
-            android:padding="@dimen/v_padding_xs"
-            app:titleText="图标"
-            android:textSize="24sp" />
+            android:orientation="vertical">
+
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="3"
+                android:padding="@dimen/v_padding_md"
+                android:useDefaultMargins="true">
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search"
-            app:queryHint="Search..."
-            app:iconifiedByDefault="false"
-            app:closeIcon="@null"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
-        <GridLayout
-            android:id="@+id/gridLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:rowCount="3"
-            android:padding="@dimen/v_padding_md"
-            android:useDefaultMargins="true">
-
-        </GridLayout>
-
-    </LinearLayout>
-
-
-</ScrollView>
+</LinearLayout>
 
