@@ -59,9 +59,8 @@ class IconView : AppCompatTextView {
     }
 
     private fun updateView() {
-        typeface =
-            if (name.endsWith(".fill", true)) TypefaceCache.typeFaceFill else TypefaceCache.typeFace
-        text = name.removeSuffix(".fill")
+        typeface =  TypefaceCache.typeFace
+        text = name
     }
 
     fun setName(name: Int) {
@@ -71,12 +70,8 @@ class IconView : AppCompatTextView {
 
 object TypefaceCache {
     val typeFace: Typeface by lazy {
-        ResourcesCompat.getFont(IconInitializer.context!!, R.font.gmd_outlined_light)
+        ResourcesCompat.getFont(IconInitializer.context!!, R.font.uview)
             ?: Typeface.DEFAULT
     }
 
-    val typeFaceFill: Typeface by lazy {
-        ResourcesCompat.getFont(IconInitializer.context!!, R.font.gmd_outlined_light_filled)
-            ?: Typeface.DEFAULT
-    }
 }

@@ -42,9 +42,9 @@ class NavBarView : FrameLayout {
 
     private fun init(context: Context, attrs: AttributeSet?) {
         leftView = IconView(context).apply {
-            setName(R.string.icon_chevron_backward)
+            setName(R.string.icon_arrow_left)
             gravity = Gravity.CENTER
-            textSize = resources.getDimension(R.dimen.v_font_size_md)
+            textSize = resources.getDimension(R.dimen.v_font_size_xs)
             setTextColor(ContextCompat.getColor(context, R.color.v_primary))
             setOnClickListener(leftListener)
         }
