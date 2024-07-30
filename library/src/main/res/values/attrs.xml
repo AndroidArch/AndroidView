@@ -66,6 +66,12 @@
 
     </declare-styleable>
 
+    <declare-styleable name="NavBarView">
+        <attr name="leftText" format="string|reference" />
+        <attr name="titleText" format="string|reference" />
+        <attr name="rightText" format="string|reference" />
+    </declare-styleable>
+
     <declare-styleable name="IconView">
         <attr name="name" format="reference|string" />
     </declare-styleable>
