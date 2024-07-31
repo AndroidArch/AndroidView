@@ -14,51 +14,25 @@ import androidx.annotation.StyleableRes;
  */
 public class ViewUtils {
 
-    /**
-     * Value of dp to value of px.
-     *
-     * @param dpValue The value of dp.
-     * @return value of px
-     */
-    public static int dp2px(final float dpValue) {
-        final float scale = Resources.getSystem().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5f);
+    public static int dp2px(float dpValue) {
+        float scale = Resources.getSystem().getDisplayMetrics().density;
+        return (int)(dpValue * scale + 0.5F);
     }
 
-    /**
-     * Value of px to value of dp.
-     *
-     * @param pxValue The value of px.
-     * @return value of dp
-     */
-    public static int px2dp(final float pxValue) {
-        final float scale = Resources.getSystem().getDisplayMetrics().density;
-        return (int) (pxValue / scale + 0.5f);
+    public static int px2dp(float pxValue) {
+        float scale = Resources.getSystem().getDisplayMetrics().density;
+        return (int)(pxValue / scale + 0.5F);
     }
 
-    /**
-     * Value of sp to value of px.
-     *
-     * @param spValue The value of sp.
-     * @return value of px
-     */
-    public static int sp2px(final float spValue) {
-        final float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
-        return (int) (spValue * fontScale + 0.5f);
+    public static int sp2px(float spValue) {
+        float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
+        return (int)(spValue * fontScale + 0.5F);
     }
 
-    /**
-     * Value of px to value of sp.
-     *
-     * @param pxValue The value of px.
-     * @return value of sp
-     */
-    public static int px2sp(final float pxValue) {
-        final float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
-        return (int) (pxValue / fontScale + 0.5f);
+    public static int px2sp(float pxValue) {
+        float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
+        return (int)(pxValue / fontScale + 0.5F);
     }
-
-
     /**
      * 按给定比例暗化颜色。
      *
@@ -72,6 +46,20 @@ public class ViewUtils {
         // 减小亮度
         hsv[2] *= ratio;
         return Color.HSVToColor(hsv);
+    }
+
+    public static int getTypedArraySize(TypedArray typedArray, @StyleableRes int index, int defValue) {
+        if (typedArray !=null) {
+            return typedArray.getDimensionPixelSize(index, defValue);
+        }
+        return defValue;
+    }
+
+    public static float getTypedArrayFontSize(TypedArray typedArray, @StyleableRes int index, float defValue) {
+        if (typedArray !=null) {
+            return typedArray.getDimension(index, defValue);
+        }
+        return defValue;
     }
 
     public static String getTypedArrayString(TypedArray typedArray, @StyleableRes int index, String defValue) {
@@ -92,6 +80,8 @@ public class ViewUtils {
                     String value = typedArray.getString(index);
                     if (value != null) {
                         color = Color.parseColor(value);
+                    } else {
+                        return defValue;
                     }
                 }
 
@@ -103,10 +93,6 @@ public class ViewUtils {
 
         }
         return defValue;
-    }
-
-    public static int getColor(Context context, @ColorRes int index) {
-        return context.getResources().getColor(index);
     }
 
     public static TextView copy(TextView textView) {

@@ -57,6 +57,7 @@
                     android:layout_columnWeight="1"
                     android:layout_height="100dp"
                     app:imageSrc="@drawable/icon"
+                    android:src="@color/v_primary"
                     />
 
                 <com.bigoat.android.view.image.ImageView

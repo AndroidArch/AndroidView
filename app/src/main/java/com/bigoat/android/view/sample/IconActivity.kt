@@ -15,6 +15,8 @@ import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import com.bigoat.android.view.icon.FontAwesome
 import com.bigoat.android.view.icon.IconView
 import com.bigoat.android.view.navbar.NavBarView
+import com.blankj.utilcode.util.KeyboardUtils
+import com.blankj.utilcode.util.SizeUtils
 import com.blankj.utilcode.util.ThreadUtils
 import java.lang.reflect.Field
 import java.util.concurrent.TimeUnit
@@ -27,10 +29,15 @@ class IconActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_icon)
-        val nav:NavBarView = findViewById(R.id.nav)
+
+
+        loadAllIconView()
+    }
+
+    private fun loadAllIconView() {
+        val nav: NavBarView = findViewById(R.id.nav)
 
         val gridLayout = findViewById<GridLayout>(R.id.gridLayout)
-
         val searchView = findViewById<SearchView>(R.id.search)
         searchView.setOnQueryTextListener(object : OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -39,11 +46,12 @@ class IconActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(name: String?): Boolean {
-                iconViewList.forEach{
-                    val show:Boolean = name?.let { it1 -> (it.tag as String).contains(it1) } == true
-                    when(show) {
-                        true -> it.visibility =  View.VISIBLE
-                        else -> it.visibility =  View.GONE
+                iconViewList.forEach {
+                    val show: Boolean =
+                        name?.let { it1 -> (it.tag as String).contains(it1) } == true
+                    when (show) {
+                        true -> it.visibility = View.VISIBLE
+                        else -> it.visibility = View.GONE
                     }
                 }
                 return true
@@ -98,5 +106,10 @@ class IconActivity : AppCompatActivity() {
         return stringResources
     }
 
+
+    override fun onResume() {
+        super.onResume()
+        KeyboardUtils.hideSoftInput(this)
+    }
 
 }

@@ -7,12 +7,25 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import com.bigoat.android.view.R
+import com.bigoat.android.view.utils.ViewUtils
 
 /**
- * 徽章控件
+ * 图标控件
  */
 class IconView : AppCompatTextView {
     var name: String = ""
+        set(value) {
+            field = value
+            updateView()
+        }
+
+    var color: Int = resources.getColor(R.color.v_primary)
+        set(value) {
+            field = value
+            updateView()
+        }
+
+    var size: Float = resources.getDimension(R.dimen.v_font_size)
         set(value) {
             field = value
             updateView()
@@ -35,6 +48,8 @@ class IconView : AppCompatTextView {
     }
 
     private fun init(context: Context, attrs: AttributeSet?) {
+        typeface = TypefaceCache.typeFace
+
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.IconView)
         try {
             initAttrs(typedArray)
@@ -44,23 +59,17 @@ class IconView : AppCompatTextView {
     }
 
     private fun initAttrs(typedArray: TypedArray) {
-        var nameStr = typedArray.getString(R.styleable.IconView_name)
-        if (nameStr == null) {
-            val nameInt = typedArray.getInt(R.styleable.IconView_name, -1)
-            if (nameInt != -1) {
-                nameStr = resources.getString(nameInt)
-            }
-        }
+        name = ViewUtils.getTypedArrayString(typedArray, R.styleable.IconView_name, "")
+        color = ViewUtils.getTypedArrayColor(typedArray, R.styleable.IconView_color, R.color.v_primary)
+        size = ViewUtils.getTypedArrayFontSize(typedArray, R.styleable.IconView_size, resources.getDimension(R.dimen.v_font_size))
 
-        nameStr?.let {
-            name = it
-            updateView()
-        }
+        updateView()
     }
 
     private fun updateView() {
-        typeface =  TypefaceCache.typeFace
         text = name
+        setTextColor(color)
+        textSize = size
     }
 
     fun setName(name: Int) {
