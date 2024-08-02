@@ -1,14 +1,11 @@
 package com.bigoat.android.view.sample
 
-import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.bigoat.android.view.sample.databinding.ActivityColorBinding
+import com.bigoat.android.view.sample.my.MyActivity
 
-class ColorActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_color)
+class ColorActivity : MyActivity<ActivityColorBinding, ViewModel>() {
+
+    override fun myCreate(bind: ActivityColorBinding, vm: ViewModel) {
+
     }
 }

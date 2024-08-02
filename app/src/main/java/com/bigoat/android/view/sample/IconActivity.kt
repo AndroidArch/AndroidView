@@ -1,7 +1,6 @@
 package com.bigoat.android.view.sample
 
 import android.annotation.SuppressLint
-import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,14 +11,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
-import com.bigoat.android.view.icon.FontAwesome
 import com.bigoat.android.view.icon.IconView
-import com.bigoat.android.view.navbar.NavBarView
+import com.bigoat.android.view.navbar.NavbarView
 import com.blankj.utilcode.util.KeyboardUtils
-import com.blankj.utilcode.util.SizeUtils
-import com.blankj.utilcode.util.ThreadUtils
 import java.lang.reflect.Field
-import java.util.concurrent.TimeUnit
 
 class IconActivity : AppCompatActivity() {
 
@@ -35,7 +30,7 @@ class IconActivity : AppCompatActivity() {
     }
 
     private fun loadAllIconView() {
-        val nav: NavBarView = findViewById(R.id.nav)
+        val nav: NavbarView = findViewById(R.id.nav)
 
         val gridLayout = findViewById<GridLayout>(R.id.gridLayout)
         val searchView = findViewById<SearchView>(R.id.search)

@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.bigoat.android.view.navbar.NavBarView
+    <com.bigoat.android.view.navbar.NavbarView
         android:id="@+id/nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

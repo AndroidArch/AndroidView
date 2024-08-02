@@ -1,5 +1,6 @@
 package com.bigoat.android.view.navbar
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.res.TypedArray
@@ -16,15 +17,13 @@ import com.bigoat.android.view.icon.IconView
 /**
  * NavBar控件
  */
-class NavBarView : FrameLayout {
-    private var value: String? = null
+class NavbarView : FrameLayout {
+    private lateinit var leftView: IconView
+    private lateinit var titleView: TextView
+    private lateinit var rightView: IconView
 
-    lateinit var leftView: IconView
-    lateinit var titleView: TextView
-    lateinit var rightView: TextView
-
-    private var leftListener: OnClickListener = OnClickListener { finishActivity() }
-    private var rightListener: OnClickListener = OnClickListener { }
+    private var leftListener = OnClickListener { if (autoBack) finishActivity() }
+    private var rightListener = OnClickListener { }
 
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -34,18 +33,12 @@ class NavBarView : FrameLayout {
         init(context, attrs)
     }
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context, attrs, defStyleAttr
-    ) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         init(context, attrs)
     }
 
     private fun init(context: Context, attrs: AttributeSet?) {
         leftView = IconView(context).apply {
-            setName(R.string.icon_arrow_left)
-            gravity = Gravity.CENTER
-            textSize = resources.getDimension(R.dimen.v_font_size_xs)
-            setTextColor(ContextCompat.getColor(context, R.color.v_primary))
             setOnClickListener(leftListener)
         }
 
@@ -54,25 +47,25 @@ class NavBarView : FrameLayout {
             setTextColor(ContextCompat.getColor(context, R.color.v_primary))
         }
 
-        rightView = TextView(context).apply {
-            gravity = Gravity.CENTER
-            setTextColor(ContextCompat.getColor(context, R.color.v_primary))
+        rightView = IconView(context).apply {
             setOnClickListener(rightListener)
         }
 
         addView(leftView, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT).apply {
-            gravity = Gravity.LEFT
+            gravity = Gravity.START
         })
+
         addView(titleView,
             LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT).apply {
                 gravity = Gravity.CENTER
             })
+
         addView(rightView,
             LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT).apply {
-                gravity = Gravity.RIGHT
+                gravity = Gravity.END
             })
 
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.NavBarView)
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.NavbarView)
         try {
             initAttrs(typedArray)
         } finally {
@@ -81,13 +74,23 @@ class NavBarView : FrameLayout {
 
     }
 
+    var autoBack: Boolean = true
+
+    @SuppressLint("ResourceType")
     private fun initAttrs(typedArray: TypedArray) {
-        typedArray.getString(R.styleable.NavBarView_leftText).let { text ->
-//            leftView.visibility = if (text.isNullOrEmpty()) View.GONE else View.VISIBLE
-//            leftView.text = text
+        autoBack = typedArray.getBoolean(R.styleable.NavbarView_navbarAutoBack, true)
+
+        typedArray.getString(R.styleable.NavbarView_navbarLeftText)?.let { text ->
+            leftView.text = text
+        }
+        typedArray.getColor(R.styleable.NavbarView_navbarLeftIconColor, R.color.v_main_color).let { color ->
+            leftView.setTextColor(color)
+        }
+        typedArray.getDimensionPixelSize(R.styleable.NavbarView_navbarLeftIconColor, R.color.v_main_color).let { color ->
+            leftView.setTextColor(color)
         }
 
-        typedArray.getString(R.styleable.NavBarView_titleText).let { text ->
+        typedArray.getString(R.styleable.NavBarView_title).let { text ->
             titleView.visibility = if (text.isNullOrEmpty()) View.GONE else View.VISIBLE
             titleView.text = text
         }

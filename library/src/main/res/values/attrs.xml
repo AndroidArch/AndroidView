@@ -73,10 +73,28 @@
 
     </declare-styleable>
 
-    <declare-styleable name="NavBarView">
-        <attr name="leftText" format="string|reference" />
-        <attr name="titleText" format="string|reference" />
-        <attr name="rightText" format="string|reference" />
+    <declare-styleable name="NavbarView">
+        <attr name="navbarAutoBack" format="boolean" />
+
+        <attr name="navbarLeftText" format="string|reference" />
+
+
+
+        <attr name="navbarLeftIconSize" format="dimension" />
+        <attr name="navbarLeftIconColor" format="dimension" />
+        <attr name="navbarLeftIcon" format="string|reference" />
+
+
+        <attr name="navbarRightIcon" format="string|reference" />
+        <attr name="navbarRightText" format="string|reference" />
+        <attr name="navbarRightIconSize" format="dimension" />
+        <attr name="navbarRightIconColor" format="dimension" />
+
+        <attr name="navbarTitle" format="string|reference" />
+        <attr name="navbarTitleColor" format="string|reference" />
+        <attr name="navbarTitleSize" format="string|reference" />
+        <attr name="navbarBgColor" format="string|reference" />
+        <attr name="navbarHeight" format="dimension" />
     </declare-styleable>
 
 
